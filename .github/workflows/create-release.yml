@@ -11,10 +11,10 @@
 name: Create release
 
 on:
-#  schedule:
-#    - cron: 0 8 */3 * *
-  watch:
-    types: started
+  schedule:
+    - cron: 0 8 * * 5
+#  watch:
+#    types: started
 
 jobs:
   release:
@@ -34,4 +34,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.noodles_RElEASE_TOKEN }}
       with:
         tag_name: ${{ env.RELEASE_TAG }}
-        body: 🚀 build YK-L1 OpenWrt | 编译优酷路由宝OpenWrt
+        body: 🚀 build YK-L1 OpenWrt | 定时编译优酷路由宝OpenWrt
