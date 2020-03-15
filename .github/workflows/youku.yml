@@ -1,6 +1,8 @@
 #=================================================
 # Thanks https://github.com/P3TERX/Actions-OpenWrt
 # 应用限制 https://github.com/destan19/OpenAppFilter
+# 添加luci-theme-argon-mc主题 https://github.com/sypopo/luci-theme-argon-mc
+# 添加去广告模块koolproxyR https://github.com/Leo-Jo/luci-app-koolproxyR
 #=================================================
 
 name: Build OpenWrt for 优酷 YK-L1
@@ -15,8 +17,8 @@ on:
 #      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-  watch:
-    types: started
+#  watch:
+#    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -61,6 +63,12 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Clone luci-theme-argon-mc
+      run: cd openwrt/package/lean && git clone https://github.com/HDragon8/luci-theme-argon-mc
+      
+    - name: Clone koolproxyR source code
+      run: cd openwrt/package && git clone https://github.com/Leo-Jo/luci-app-koolproxyR 
 
     - name: Load custom configuration
       run: |
