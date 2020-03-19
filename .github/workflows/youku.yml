@@ -55,20 +55,23 @@ jobs:
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: Clone OpenAppFilter source code
-      run: cd openwrt/package && git clone https://github.com/destan19/OpenAppFilter.git
-
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: Clone OpenAppFilter source code
+      run: cd openwrt/package && git clone https://github.com/destan19/OpenAppFilter.git
+      
     - name: 我的主题
       run: cd openwrt/package/lean && git clone https://github.com/HDragon8/luci-theme-noodles
       
     - name: Clone koolproxyR source code
       run: cd openwrt/package && git clone https://github.com/Leo-Jo/luci-app-koolproxyR 
+      
+    - name: index添加天气
+      run: cd openwrt && git clone https://github.com/HDragon8/noodlesindex      
 
     - name: Load custom configuration
       run: |
