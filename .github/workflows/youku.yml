@@ -70,8 +70,8 @@ jobs:
     - name: Clone koolproxyR source code
       run: cd openwrt/package && git clone https://github.com/Leo-Jo/luci-app-koolproxyR 
       
-    - name: index添加天气
-      run: cd openwrt && git clone https://github.com/HDragon8/noodlesindex      
+#    - name: index添加天气
+#      run: cd openwrt && git clone https://github.com/HDragon8/noodlesindex      
 
     - name: Load custom configuration
       run: |
