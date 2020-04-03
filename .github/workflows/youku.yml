@@ -2,7 +2,7 @@
 # Thanks https://github.com/P3TERX/Actions-OpenWrt
 # 应用限制 https://github.com/destan19/OpenAppFilter
 # 添加luci-theme-argon-mc主题 https://github.com/sypopo/luci-theme-argon-mc
-# 添加去广告模块koolproxyR https://github.com/Leo-Jo/luci-app-koolproxyR
+# 弃用*******添加去广告模块koolproxyR https://github.com/Leo-Jo/luci-app-koolproxyR*******弃用
 #=================================================
 
 name: Build OpenWrt for 优酷 YK-L1
@@ -61,11 +61,10 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: 应用限制/去广告/微信推送
+    - name: 应用限制/微信推送
       run: |
        cd openwrt/package
        git clone https://github.com/destan19/OpenAppFilter
-#       git clone https://github.com/Leo-Jo/luci-app-koolproxyR
        git clone https://github.com/tty228/luci-app-serverchan       
        
     - name: 我的主题
